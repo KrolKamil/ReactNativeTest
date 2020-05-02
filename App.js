@@ -1,10 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+
+  const [mainText, setMainText] = useState('Hello World');
+
+  const handleButtonPress = () => {
+    setMainText('Hello Universe')
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>{mainText}</Text>
+      <Button 
+        onPress={handleButtonPress}
+        title="Click me"
+      />
     </View>
   );
 }
